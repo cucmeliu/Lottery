@@ -1,0 +1,1001 @@
+<html><head><title>双色球频率图</title>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta name="程序设计" content="张成志(E-mail:zhangcz@beelink.com | QQ:193188)&gt;
+&lt;style type=" text/css=""><!--
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+-->
+
+
+<link href="pltss.php_files/index.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.rb {  background-attachment: fixed; background-image:  url(rb.gif); background-repeat: no-repeat; background-position: center center}
+.bb {  background-attachment: fixed; background-image:  url(bb.gif); background-repeat: no-repeat; background-position: center center}
+-->
+</style>
+<script language="javascript">
+<!--
+
+var fsize=12;
+var selball=0;
+var maxball=7;
+
+function zoomin(i) 
+{ 
+
+  	newZoom= parseInt(test123.style.zoom)+5+'%';
+	test123.style.zoom =newZoom;
+}
+function zoomout(i) 
+{ 
+	newZoom= parseInt(test123.style.zoom)-5;
+	if(newZoom<10)
+	{
+		newZoom=10;
+		alert("再小就看不见了！");
+	}
+	test123.style.zoom =newZoom +'%';
+}
+function zoomin2(i) 
+{ 
+  fsize=fsize+i;
+  var tmpstr=fsize+"px";
+  test123.style.fontSize=tmpstr;
+}
+function zoomout2(i) 
+{ 
+  if(fsize<4) return;
+  fsize=fsize-i;
+  var tmpstr=fsize+"px";
+  test123.style.fontSize=tmpstr;
+}
+
+function zoom2(i) 
+{ 
+  fsize=12;
+  var tmpstr=fsize+"px";
+  test123.style.fontSize=tmpstr;
+}
+function zoom(i) 
+{ 
+	test123.style.zoom = '100%';
+}
+function showball(imgname, i) 
+{ 
+	if(imgname.src=='http://www.sdcp.com.cn/ball/zcz.gif') imgname.src='/ball/blue_'+i+'.gif';
+	else imgname.src='/ball/zcz.gif';
+}
+function showball2(imgname, i) 
+{ 
+	if(imgname.src=='http://www.sdcp.com.cn/ball/zcz.gif')
+	{
+//		 selball++;
+//		 if(selball>7) alert("球不能多于："+maxball);
+		 imgname.src='/ball/red_'+i+'gif';
+	}
+	else
+	{
+//		 selball--;
+		 imgname.src='/ball/zcz.gif';
+	}
+}
+-->
+</script></head><body topmargin="0">
+<script src="pltss.php_files/head.js"></script><table align="center" border="0" cellpadding="0" cellspacing="0" width="743">  <tbody><tr>    <td background="pltss.php_files/1.gif" height="23" width="262"><table align="right" border="0" cellpadding="0" cellspacing="0" width="97%">      <tbody><tr>        <td><table class="zuo" align="left" border="0" cellpadding="0" cellspacing="0" width="100%">              <tbody><tr>            <td>              <div id="jnkc" style="height: 12px; width: 220px;">2006年11月15日 19:37:47 星期三</div>              <script>setInterval("jnkc.innerHTML=new Date().toLocaleString()+' 星期'+'日一二三四五六'.charAt(new Date().getDay());",1000);        </script>            </td>          </tr>        </tbody></table></td>      </tr>    </tbody></table></td>    <td background="pltss.php_files/1.gif" valign="middle" width="515"> <div align="right"><span class="zuo"><a href="http://www.sdcp.com.cn/">返回主页</a>‖<a href="http://www.95087.cn/">电话投注</a>‖<a href="http://www.sdcp.cn/html/sjtzbf.htm">移动手机投注</a>‖<a href="http://www.sdcp.cn/html/sjtzbf.htm">联通手机投注</a>‖<a href="http://www.sdcp.com.cn/lottery/">网上投注</a></span>&nbsp;<br>    </div></td>  </tr>  <tr>    <td><a href="http://www.sdcp.com.cn/html/cpbs/cpbs.htm"><img src="pltss.php_files/donghua1.gif" border="0" height="94" width="312"></a></td>    <td><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" height="94" width="467">        <param name="movie" value="/images/ad.swf">        <param name="quality" value="high">        <embed src="pltss.php_files/ad.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" height="94" width="497"></object></td>  </tr>  <tr>    <td colspan="2"><img src="pltss.php_files/bannr.gif" usemap="#Map" border="0" height="50" width="777"></td>  </tr></tbody></table><map name="Map"><area shape="rect" coords="6,1,82,48" href="http://www.sdcp.com.cn/dncp/"><area shape="rect" coords="94,1,168,48" href="http://www.sdcp.com.cn/news/tjindex.php"><area shape="rect" coords="181,1,256,48" href="http://www.sdcp.com.cn/news/jkindex.php"><area shape="rect" coords="268,1,343,48" href="http://www.sdcp.com.cn/news/bdindex.php"><area shape="rect" coords="355,1,432,48" href="http://www.sdcp.com.cn/news/xwindex.php"><area shape="rect" coords="438,1,517,48" href="http://www.sdcp.com.cn/vod/"><area shape="rect" coords="529,1,600,48" href="http://www.sdcp.com.cn/news/ltindex.php"><area shape="rect" coords="615,1,691,48" href="http://www.sdcp.com.cn/news/zjindex.php"><area shape="rect" coords="703,1,773,48" href="http://www.sdcp.com.cn/news/zxindex.php">                  </map>
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="776">
+  <tbody><tr nobr="" bgcolor="#9999ff"> 
+    <td colspan="2" align="center" height="30"> <table border="2" cellpadding="0" cellspacing="0" height="30" width="100%">
+        <tbody><tr align="center"> 
+          <td width="16%"><a href="http://www.sdcp.com.cn/analyst/fbt307.php"><strong>“齐鲁风采”30选7</strong></a></td>
+          <td width="16%"><a href="http://www.sdcp.com.cn/analyst/fbt367.php"><strong>“齐鲁风采”36选7</strong></a></td>
+          <td width="16%"><a href="http://www.sdcp.com.cn/analyst/fbt235.php"><strong>“齐鲁风采”23选5</strong></a></td>
+          <td bgcolor="#999999" width="16%"><a href="http://www.sdcp.com.cn/analyst/fbtss.php"><font color="#ffff00"><strong>中国福彩双色球</strong></font></a></td>
+          <td width="16%"><a href="http://www.sdcp.com.cn/analyst/fbt3d.php"><strong>“齐鲁风采”3D</strong></a></td>
+        </tr>
+      </tbody></table></td>
+  </tr>
+  <tr nobr=""> 
+    <td colspan="2" align="center" bgcolor="#9999ff" valign="middle"> <table border="0" cellpadding="0" cellspacing="2" height="24" width="100%">
+        <tbody><tr align="center" bgcolor="#999999"> 
+          <td width="20%"><a href="http://www.sdcp.com.cn/analyst/fbtss.php">分布图</a></td>
+          <td width="20%"><a href="http://www.sdcp.com.cn/analyst/tjtss.php">统计图</a></td>
+          <td width="20%"><a href="http://www.sdcp.com.cn/analyst/pltss.php"><font color="#ffff00"><strong>频率图</strong></font></a></td>
+          <td width="20%"><a href="http://www.sdcp.com.cn/analyst/hztss.php">和值图</a></td>
+          <td width="20%"><a href="http://www.sdcp.com.cn/analyst/qst.php?flag=6">趋势图</a></td>
+        </tr>
+      </tbody></table></td>
+  </tr>
+  <tr nobr="" bgcolor="#cccccc"> 
+	<form action="" method="post"></form> 
+    <td align="center" valign="middle" width="48%">
+      <select size="1" name="q1">
+<option selected="selected" value="2004019">2004019</option>	  <option value="">--请选择期号--</option>
+<option value="2006S134">2006S134</option>
+<option value="2006S133">2006S133</option>
+<option value="2006S132">2006S132</option>
+<option value="2006S131">2006S131</option>
+<option value="2006S130">2006S130</option>
+<option value="2006S129">2006S129</option>
+<option value="2006S128">2006S128</option>
+<option value="2006S127">2006S127</option>
+<option value="2006S126">2006S126</option>
+<option value="2006S125">2006S125</option>
+<option value="2006S124">2006S124</option>
+<option value="2006S123">2006S123</option>
+<option value="2006S122">2006S122</option>
+<option value="2006S121">2006S121</option>
+<option value="2006S120">2006S120</option>
+<option value="2006S119">2006S119</option>
+<option value="2006S118">2006S118</option>
+<option value="2006S117">2006S117</option>
+<option value="2006S116">2006S116</option>
+<option value="2006S115">2006S115</option>
+<option value="2006S114">2006S114</option>
+<option value="2006S113">2006S113</option>
+<option value="2006S112">2006S112</option>
+<option value="2006S111">2006S111</option>
+<option value="2006S110">2006S110</option>
+<option value="2006S109">2006S109</option>
+<option value="2006S108">2006S108</option>
+<option value="2006S107">2006S107</option>
+<option value="2006S106">2006S106</option>
+<option value="2006S105">2006S105</option>
+<option value="2006S104">2006S104</option>
+<option value="2006S103">2006S103</option>
+<option value="2006S102">2006S102</option>
+<option value="2006S101">2006S101</option>
+<option value="2006S100">2006S100</option>
+<option value="2006S099">2006S099</option>
+<option value="2006S098">2006S098</option>
+<option value="2006S097">2006S097</option>
+<option value="2006S096">2006S096</option>
+<option value="2006S095">2006S095</option>
+<option value="2006S094">2006S094</option>
+<option value="2006S093">2006S093</option>
+<option value="2006S092">2006S092</option>
+<option value="2006S091">2006S091</option>
+<option value="2006S090">2006S090</option>
+<option value="2006S089">2006S089</option>
+<option value="2006S088">2006S088</option>
+<option value="2006S087">2006S087</option>
+<option value="2006S086">2006S086</option>
+<option value="2006S085">2006S085</option>
+<option value="2006S084">2006S084</option>
+<option value="2006S083">2006S083</option>
+<option value="2006S082">2006S082</option>
+<option value="2006S081">2006S081</option>
+<option value="2006S080">2006S080</option>
+<option value="2006S079">2006S079</option>
+<option value="2006S078">2006S078</option>
+<option value="2006S077">2006S077</option>
+<option value="2006S076">2006S076</option>
+<option value="2006S075">2006S075</option>
+<option value="2006S074">2006S074</option>
+<option value="2006S073">2006S073</option>
+<option value="2006S072">2006S072</option>
+<option value="2006S071">2006S071</option>
+<option value="2006S070">2006S070</option>
+<option value="2006S069">2006S069</option>
+<option value="2006S068">2006S068</option>
+<option value="2006S067">2006S067</option>
+<option value="2006S066">2006S066</option>
+<option value="2006S065">2006S065</option>
+<option value="2006S064">2006S064</option>
+<option value="2006S063">2006S063</option>
+<option value="2006S062">2006S062</option>
+<option value="2006S061">2006S061</option>
+<option value="2006S060">2006S060</option>
+<option value="2006S059">2006S059</option>
+<option value="2006S058">2006S058</option>
+<option value="2006S057">2006S057</option>
+<option value="2006S056">2006S056</option>
+<option value="2006S055">2006S055</option>
+<option value="2006S054">2006S054</option>
+<option value="2006S053">2006S053</option>
+<option value="2006S052">2006S052</option>
+<option value="2006S051">2006S051</option>
+<option value="2006S050">2006S050</option>
+<option value="2006S049">2006S049</option>
+<option value="2006S048">2006S048</option>
+<option value="2006S047">2006S047</option>
+<option value="2006S046">2006S046</option>
+<option value="2006S045">2006S045</option>
+<option value="2006S044">2006S044</option>
+<option value="2006S043">2006S043</option>
+<option value="2006S042">2006S042</option>
+<option value="2006S041">2006S041</option>
+<option value="2006S040">2006S040</option>
+<option value="2006S039">2006S039</option>
+<option value="2006S038">2006S038</option>
+<option value="2006S037">2006S037</option>
+<option value="2006S036">2006S036</option>
+<option value="2006S035">2006S035</option>
+<option value="2006S034">2006S034</option>
+<option value="2006S033">2006S033</option>
+<option value="2006S032">2006S032</option>
+<option value="2006S031">2006S031</option>
+<option value="2006S030">2006S030</option>
+<option value="2006S029">2006S029</option>
+<option value="2006S028">2006S028</option>
+<option value="2006S027">2006S027</option>
+<option value="2006S026">2006S026</option>
+<option value="2006S025">2006S025</option>
+<option value="2006S024">2006S024</option>
+<option value="2006S023">2006S023</option>
+<option value="2006S022">2006S022</option>
+<option value="2006S021">2006S021</option>
+<option value="2006S020">2006S020</option>
+<option value="2006S019">2006S019</option>
+<option value="2006S018">2006S018</option>
+<option value="2006S017">2006S017</option>
+<option value="2006S016">2006S016</option>
+<option value="2006S015">2006S015</option>
+<option value="2006S014">2006S014</option>
+<option value="2006S013">2006S013</option>
+<option value="2006S012">2006S012</option>
+<option value="2006S011">2006S011</option>
+<option value="2006S010">2006S010</option>
+<option value="2006S009">2006S009</option>
+<option value="2006S008">2006S008</option>
+<option value="2006S007">2006S007</option>
+<option value="2006S006">2006S006</option>
+<option value="2006S005">2006S005</option>
+<option value="2006S004">2006S004</option>
+<option value="2006S003">2006S003</option>
+<option value="2006S002">2006S002</option>
+<option value="2006S001">2006S001</option>
+<option value="2005S153">2005S153</option>
+<option value="2005S152">2005S152</option>
+<option value="2005S151">2005S151</option>
+<option value="2005S150">2005S150</option>
+<option value="2005S149">2005S149</option>
+<option value="2005S148">2005S148</option>
+<option value="2005S147">2005S147</option>
+<option value="2005S146">2005S146</option>
+<option value="2005S145">2005S145</option>
+<option value="2005S144">2005S144</option>
+<option value="2005S143">2005S143</option>
+<option value="2005S142">2005S142</option>
+<option value="2005S141">2005S141</option>
+<option value="2005S140">2005S140</option>
+<option value="2005S139">2005S139</option>
+<option value="2005S138">2005S138</option>
+<option value="2005S137">2005S137</option>
+<option value="2005S136">2005S136</option>
+<option value="2005S135">2005S135</option>
+<option value="2005S134">2005S134</option>
+<option value="2005S133">2005S133</option>
+<option value="2005S132">2005S132</option>
+<option value="2005S131">2005S131</option>
+<option value="2005S130">2005S130</option>
+<option value="2005S129">2005S129</option>
+<option value="2005S128">2005S128</option>
+<option value="2005S127">2005S127</option>
+<option value="2005S126">2005S126</option>
+<option value="2005S125">2005S125</option>
+<option value="2005S124">2005S124</option>
+<option value="2005S123">2005S123</option>
+<option value="2005S122">2005S122</option>
+<option value="2005S121">2005S121</option>
+<option value="2005S120">2005S120</option>
+<option value="2005S119">2005S119</option>
+<option value="2005S118">2005S118</option>
+<option value="2005S117">2005S117</option>
+<option value="2005S116">2005S116</option>
+<option value="2005S115">2005S115</option>
+<option value="2005S114">2005S114</option>
+<option value="2005S113">2005S113</option>
+<option value="2005S112">2005S112</option>
+<option value="2005S111">2005S111</option>
+<option value="2005S110">2005S110</option>
+<option value="2005S109">2005S109</option>
+<option value="2005S108">2005S108</option>
+<option value="2005S107">2005S107</option>
+<option value="2005S106">2005S106</option>
+<option value="2005S105">2005S105</option>
+<option value="2005S104">2005S104</option>
+<option value="2005S103">2005S103</option>
+<option value="2005S102">2005S102</option>
+<option value="2005S101">2005S101</option>
+<option value="2005S100">2005S100</option>
+<option value="2005S099">2005S099</option>
+<option value="2005S098">2005S098</option>
+<option value="2005S097">2005S097</option>
+<option value="2005S096">2005S096</option>
+<option value="2005S095">2005S095</option>
+<option value="2005S094">2005S094</option>
+<option value="2005S093">2005S093</option>
+<option value="2005S092">2005S092</option>
+<option value="2005S091">2005S091</option>
+<option value="2005S090">2005S090</option>
+<option value="2005S089">2005S089</option>
+<option value="2005S088">2005S088</option>
+<option value="2005S087">2005S087</option>
+<option value="2005S086">2005S086</option>
+<option value="2005S085">2005S085</option>
+<option value="2005S084">2005S084</option>
+<option value="2005S083">2005S083</option>
+<option value="2005S082">2005S082</option>
+<option value="2005S081">2005S081</option>
+<option value="2005S080">2005S080</option>
+<option value="2005S079">2005S079</option>
+<option value="2005S078">2005S078</option>
+<option value="2005S077">2005S077</option>
+<option value="2005S076">2005S076</option>
+<option value="2005S075">2005S075</option>
+<option value="2005S074">2005S074</option>
+<option value="2005S073">2005S073</option>
+<option value="2005S072">2005S072</option>
+<option value="2005S071">2005S071</option>
+<option value="2005S070">2005S070</option>
+<option value="2005S069">2005S069</option>
+<option value="2005S068">2005S068</option>
+<option value="2005S067">2005S067</option>
+<option value="2005S066">2005S066</option>
+<option value="2005S065">2005S065</option>
+<option value="2005S064">2005S064</option>
+<option value="2005S063">2005S063</option>
+<option value="2005S062">2005S062</option>
+<option value="2005S061">2005S061</option>
+<option value="2005S060">2005S060</option>
+<option value="2005S059">2005S059</option>
+<option value="2005S058">2005S058</option>
+<option value="2005S057">2005S057</option>
+<option value="2005S056">2005S056</option>
+<option value="2005S055">2005S055</option>
+<option value="2005S054">2005S054</option>
+<option value="2005S053">2005S053</option>
+<option value="2005S052">2005S052</option>
+<option value="2005S051">2005S051</option>
+<option value="2005S050">2005S050</option>
+<option value="2005S049">2005S049</option>
+<option value="2005S048">2005S048</option>
+<option value="2005S047">2005S047</option>
+<option value="2005S046">2005S046</option>
+<option value="2005S045">2005S045</option>
+<option value="2005S044">2005S044</option>
+<option value="2005S043">2005S043</option>
+<option value="2005S042">2005S042</option>
+<option value="2005S041">2005S041</option>
+<option value="2005S040">2005S040</option>
+<option value="2005S039">2005S039</option>
+<option value="2005S038">2005S038</option>
+<option value="2005S037">2005S037</option>
+<option value="2005S036">2005S036</option>
+<option value="2005S035">2005S035</option>
+<option value="2005S034">2005S034</option>
+<option value="2005S033">2005S033</option>
+<option value="2005S032">2005S032</option>
+<option value="2005S031">2005S031</option>
+<option value="2005S030">2005S030</option>
+<option value="2005S029">2005S029</option>
+<option value="2005S028">2005S028</option>
+<option value="2005S027">2005S027</option>
+<option value="2005S026">2005S026</option>
+<option value="2005S025">2005S025</option>
+<option value="2005S024">2005S024</option>
+<option value="2005S023">2005S023</option>
+<option value="2005S022">2005S022</option>
+<option value="2005S021">2005S021</option>
+<option value="2005S020">2005S020</option>
+<option value="2005S019">2005S019</option>
+<option value="2005S018">2005S018</option>
+<option value="2005S017">2005S017</option>
+<option value="2005S016">2005S016</option>
+<option value="2005S015">2005S015</option>
+<option value="2005S014">2005S014</option>
+<option value="2005S013">2005S013</option>
+<option value="2005S012">2005S012</option>
+<option value="2005S011">2005S011</option>
+<option value="2005S010">2005S010</option>
+<option value="2005S009">2005S009</option>
+<option value="2005S008">2005S008</option>
+<option value="2005S007">2005S007</option>
+<option value="2005S006">2005S006</option>
+<option value="2005S005">2005S005</option>
+<option value="2005S004">2005S004</option>
+<option value="2005S003">2005S003</option>
+<option value="2005S002">2005S002</option>
+<option value="2005S001">2005S001</option>
+<option value="2004122">2004122</option>
+<option value="2004121">2004121</option>
+<option value="2004120">2004120</option>
+<option value="2004119">2004119</option>
+<option value="2004118">2004118</option>
+<option value="2004117">2004117</option>
+<option value="2004116">2004116</option>
+<option value="2004115">2004115</option>
+<option value="2004114">2004114</option>
+<option value="2004113">2004113</option>
+<option value="2004112">2004112</option>
+<option value="2004111">2004111</option>
+<option value="2004110">2004110</option>
+<option value="2004109">2004109</option>
+<option value="2004108">2004108</option>
+<option value="2004107">2004107</option>
+<option value="2004106">2004106</option>
+<option value="2004105">2004105</option>
+<option value="2004104">2004104</option>
+<option value="2004103">2004103</option>
+<option value="2004102">2004102</option>
+<option value="2004101">2004101</option>
+<option value="2004100">2004100</option>
+<option value="2004099">2004099</option>
+<option value="2004098">2004098</option>
+<option value="2004097">2004097</option>
+<option value="2004096">2004096</option>
+<option value="2004095">2004095</option>
+<option value="2004094">2004094</option>
+<option value="2004093">2004093</option>
+<option value="2004092">2004092</option>
+<option value="2004091">2004091</option>
+<option value="2004090">2004090</option>
+<option value="2004089">2004089</option>
+<option value="2004088">2004088</option>
+<option value="2004087">2004087</option>
+<option value="2004086">2004086</option>
+<option value="2004085">2004085</option>
+<option value="2004084">2004084</option>
+<option value="2004083">2004083</option>
+<option value="2004082">2004082</option>
+<option value="2004081">2004081</option>
+<option value="2004080">2004080</option>
+<option value="2004079">2004079</option>
+<option value="2004078">2004078</option>
+<option value="2004077">2004077</option>
+<option value="2004076">2004076</option>
+<option value="2004075">2004075</option>
+<option value="2004074">2004074</option>
+<option value="2004073">2004073</option>
+<option value="2004072">2004072</option>
+<option value="2004071">2004071</option>
+<option value="2004070">2004070</option>
+<option value="2004069">2004069</option>
+<option value="2004068">2004068</option>
+<option value="2004067">2004067</option>
+<option value="2004066">2004066</option>
+<option value="2004065">2004065</option>
+<option value="2004064">2004064</option>
+<option value="2004063">2004063</option>
+<option value="2004062">2004062</option>
+<option value="2004061">2004061</option>
+<option value="2004060">2004060</option>
+<option value="2004059">2004059</option>
+<option value="2004058">2004058</option>
+<option value="2004057">2004057</option>
+<option value="2004056">2004056</option>
+<option value="2004055">2004055</option>
+<option value="2004054">2004054</option>
+<option value="2004053">2004053</option>
+<option value="2004052">2004052</option>
+<option value="2004051">2004051</option>
+<option value="2004050">2004050</option>
+<option value="2004049">2004049</option>
+<option value="2004048">2004048</option>
+<option value="2004047">2004047</option>
+<option value="2004046">2004046</option>
+<option value="2004045">2004045</option>
+<option value="2004044">2004044</option>
+<option value="2004043">2004043</option>
+<option value="2004042">2004042</option>
+<option value="2004041">2004041</option>
+<option value="2004040">2004040</option>
+<option value="2004039">2004039</option>
+<option value="2004038">2004038</option>
+<option value="2004037">2004037</option>
+<option value="2004036">2004036</option>
+<option value="2004035">2004035</option>
+<option value="2004034">2004034</option>
+<option value="2004033">2004033</option>
+<option value="2004032">2004032</option>
+<option value="2004031">2004031</option>
+<option value="2004030">2004030</option>
+<option value="2004029">2004029</option>
+<option value="2004028">2004028</option>
+<option value="2004027">2004027</option>
+<option value="2004026">2004026</option>
+<option value="2004025">2004025</option>
+<option value="2004024">2004024</option>
+<option value="2004023">2004023</option>
+<option value="2004022">2004022</option>
+<option value="2004021">2004021</option>
+<option value="2004020">2004020</option>
+<option value="2004019">2004019</option>
+      </select>	  
+      至 
+      <select size="1" name="q2">
+<option selected="selected" value="2006S134">2006S134</option>	  <option value="">--请选择期号--</option>
+<option value="2006S134">2006S134</option>
+<option value="2006S133">2006S133</option>
+<option value="2006S132">2006S132</option>
+<option value="2006S131">2006S131</option>
+<option value="2006S130">2006S130</option>
+<option value="2006S129">2006S129</option>
+<option value="2006S128">2006S128</option>
+<option value="2006S127">2006S127</option>
+<option value="2006S126">2006S126</option>
+<option value="2006S125">2006S125</option>
+<option value="2006S124">2006S124</option>
+<option value="2006S123">2006S123</option>
+<option value="2006S122">2006S122</option>
+<option value="2006S121">2006S121</option>
+<option value="2006S120">2006S120</option>
+<option value="2006S119">2006S119</option>
+<option value="2006S118">2006S118</option>
+<option value="2006S117">2006S117</option>
+<option value="2006S116">2006S116</option>
+<option value="2006S115">2006S115</option>
+<option value="2006S114">2006S114</option>
+<option value="2006S113">2006S113</option>
+<option value="2006S112">2006S112</option>
+<option value="2006S111">2006S111</option>
+<option value="2006S110">2006S110</option>
+<option value="2006S109">2006S109</option>
+<option value="2006S108">2006S108</option>
+<option value="2006S107">2006S107</option>
+<option value="2006S106">2006S106</option>
+<option value="2006S105">2006S105</option>
+<option value="2006S104">2006S104</option>
+<option value="2006S103">2006S103</option>
+<option value="2006S102">2006S102</option>
+<option value="2006S101">2006S101</option>
+<option value="2006S100">2006S100</option>
+<option value="2006S099">2006S099</option>
+<option value="2006S098">2006S098</option>
+<option value="2006S097">2006S097</option>
+<option value="2006S096">2006S096</option>
+<option value="2006S095">2006S095</option>
+<option value="2006S094">2006S094</option>
+<option value="2006S093">2006S093</option>
+<option value="2006S092">2006S092</option>
+<option value="2006S091">2006S091</option>
+<option value="2006S090">2006S090</option>
+<option value="2006S089">2006S089</option>
+<option value="2006S088">2006S088</option>
+<option value="2006S087">2006S087</option>
+<option value="2006S086">2006S086</option>
+<option value="2006S085">2006S085</option>
+<option value="2006S084">2006S084</option>
+<option value="2006S083">2006S083</option>
+<option value="2006S082">2006S082</option>
+<option value="2006S081">2006S081</option>
+<option value="2006S080">2006S080</option>
+<option value="2006S079">2006S079</option>
+<option value="2006S078">2006S078</option>
+<option value="2006S077">2006S077</option>
+<option value="2006S076">2006S076</option>
+<option value="2006S075">2006S075</option>
+<option value="2006S074">2006S074</option>
+<option value="2006S073">2006S073</option>
+<option value="2006S072">2006S072</option>
+<option value="2006S071">2006S071</option>
+<option value="2006S070">2006S070</option>
+<option value="2006S069">2006S069</option>
+<option value="2006S068">2006S068</option>
+<option value="2006S067">2006S067</option>
+<option value="2006S066">2006S066</option>
+<option value="2006S065">2006S065</option>
+<option value="2006S064">2006S064</option>
+<option value="2006S063">2006S063</option>
+<option value="2006S062">2006S062</option>
+<option value="2006S061">2006S061</option>
+<option value="2006S060">2006S060</option>
+<option value="2006S059">2006S059</option>
+<option value="2006S058">2006S058</option>
+<option value="2006S057">2006S057</option>
+<option value="2006S056">2006S056</option>
+<option value="2006S055">2006S055</option>
+<option value="2006S054">2006S054</option>
+<option value="2006S053">2006S053</option>
+<option value="2006S052">2006S052</option>
+<option value="2006S051">2006S051</option>
+<option value="2006S050">2006S050</option>
+<option value="2006S049">2006S049</option>
+<option value="2006S048">2006S048</option>
+<option value="2006S047">2006S047</option>
+<option value="2006S046">2006S046</option>
+<option value="2006S045">2006S045</option>
+<option value="2006S044">2006S044</option>
+<option value="2006S043">2006S043</option>
+<option value="2006S042">2006S042</option>
+<option value="2006S041">2006S041</option>
+<option value="2006S040">2006S040</option>
+<option value="2006S039">2006S039</option>
+<option value="2006S038">2006S038</option>
+<option value="2006S037">2006S037</option>
+<option value="2006S036">2006S036</option>
+<option value="2006S035">2006S035</option>
+<option value="2006S034">2006S034</option>
+<option value="2006S033">2006S033</option>
+<option value="2006S032">2006S032</option>
+<option value="2006S031">2006S031</option>
+<option value="2006S030">2006S030</option>
+<option value="2006S029">2006S029</option>
+<option value="2006S028">2006S028</option>
+<option value="2006S027">2006S027</option>
+<option value="2006S026">2006S026</option>
+<option value="2006S025">2006S025</option>
+<option value="2006S024">2006S024</option>
+<option value="2006S023">2006S023</option>
+<option value="2006S022">2006S022</option>
+<option value="2006S021">2006S021</option>
+<option value="2006S020">2006S020</option>
+<option value="2006S019">2006S019</option>
+<option value="2006S018">2006S018</option>
+<option value="2006S017">2006S017</option>
+<option value="2006S016">2006S016</option>
+<option value="2006S015">2006S015</option>
+<option value="2006S014">2006S014</option>
+<option value="2006S013">2006S013</option>
+<option value="2006S012">2006S012</option>
+<option value="2006S011">2006S011</option>
+<option value="2006S010">2006S010</option>
+<option value="2006S009">2006S009</option>
+<option value="2006S008">2006S008</option>
+<option value="2006S007">2006S007</option>
+<option value="2006S006">2006S006</option>
+<option value="2006S005">2006S005</option>
+<option value="2006S004">2006S004</option>
+<option value="2006S003">2006S003</option>
+<option value="2006S002">2006S002</option>
+<option value="2006S001">2006S001</option>
+<option value="2005S153">2005S153</option>
+<option value="2005S152">2005S152</option>
+<option value="2005S151">2005S151</option>
+<option value="2005S150">2005S150</option>
+<option value="2005S149">2005S149</option>
+<option value="2005S148">2005S148</option>
+<option value="2005S147">2005S147</option>
+<option value="2005S146">2005S146</option>
+<option value="2005S145">2005S145</option>
+<option value="2005S144">2005S144</option>
+<option value="2005S143">2005S143</option>
+<option value="2005S142">2005S142</option>
+<option value="2005S141">2005S141</option>
+<option value="2005S140">2005S140</option>
+<option value="2005S139">2005S139</option>
+<option value="2005S138">2005S138</option>
+<option value="2005S137">2005S137</option>
+<option value="2005S136">2005S136</option>
+<option value="2005S135">2005S135</option>
+<option value="2005S134">2005S134</option>
+<option value="2005S133">2005S133</option>
+<option value="2005S132">2005S132</option>
+<option value="2005S131">2005S131</option>
+<option value="2005S130">2005S130</option>
+<option value="2005S129">2005S129</option>
+<option value="2005S128">2005S128</option>
+<option value="2005S127">2005S127</option>
+<option value="2005S126">2005S126</option>
+<option value="2005S125">2005S125</option>
+<option value="2005S124">2005S124</option>
+<option value="2005S123">2005S123</option>
+<option value="2005S122">2005S122</option>
+<option value="2005S121">2005S121</option>
+<option value="2005S120">2005S120</option>
+<option value="2005S119">2005S119</option>
+<option value="2005S118">2005S118</option>
+<option value="2005S117">2005S117</option>
+<option value="2005S116">2005S116</option>
+<option value="2005S115">2005S115</option>
+<option value="2005S114">2005S114</option>
+<option value="2005S113">2005S113</option>
+<option value="2005S112">2005S112</option>
+<option value="2005S111">2005S111</option>
+<option value="2005S110">2005S110</option>
+<option value="2005S109">2005S109</option>
+<option value="2005S108">2005S108</option>
+<option value="2005S107">2005S107</option>
+<option value="2005S106">2005S106</option>
+<option value="2005S105">2005S105</option>
+<option value="2005S104">2005S104</option>
+<option value="2005S103">2005S103</option>
+<option value="2005S102">2005S102</option>
+<option value="2005S101">2005S101</option>
+<option value="2005S100">2005S100</option>
+<option value="2005S099">2005S099</option>
+<option value="2005S098">2005S098</option>
+<option value="2005S097">2005S097</option>
+<option value="2005S096">2005S096</option>
+<option value="2005S095">2005S095</option>
+<option value="2005S094">2005S094</option>
+<option value="2005S093">2005S093</option>
+<option value="2005S092">2005S092</option>
+<option value="2005S091">2005S091</option>
+<option value="2005S090">2005S090</option>
+<option value="2005S089">2005S089</option>
+<option value="2005S088">2005S088</option>
+<option value="2005S087">2005S087</option>
+<option value="2005S086">2005S086</option>
+<option value="2005S085">2005S085</option>
+<option value="2005S084">2005S084</option>
+<option value="2005S083">2005S083</option>
+<option value="2005S082">2005S082</option>
+<option value="2005S081">2005S081</option>
+<option value="2005S080">2005S080</option>
+<option value="2005S079">2005S079</option>
+<option value="2005S078">2005S078</option>
+<option value="2005S077">2005S077</option>
+<option value="2005S076">2005S076</option>
+<option value="2005S075">2005S075</option>
+<option value="2005S074">2005S074</option>
+<option value="2005S073">2005S073</option>
+<option value="2005S072">2005S072</option>
+<option value="2005S071">2005S071</option>
+<option value="2005S070">2005S070</option>
+<option value="2005S069">2005S069</option>
+<option value="2005S068">2005S068</option>
+<option value="2005S067">2005S067</option>
+<option value="2005S066">2005S066</option>
+<option value="2005S065">2005S065</option>
+<option value="2005S064">2005S064</option>
+<option value="2005S063">2005S063</option>
+<option value="2005S062">2005S062</option>
+<option value="2005S061">2005S061</option>
+<option value="2005S060">2005S060</option>
+<option value="2005S059">2005S059</option>
+<option value="2005S058">2005S058</option>
+<option value="2005S057">2005S057</option>
+<option value="2005S056">2005S056</option>
+<option value="2005S055">2005S055</option>
+<option value="2005S054">2005S054</option>
+<option value="2005S053">2005S053</option>
+<option value="2005S052">2005S052</option>
+<option value="2005S051">2005S051</option>
+<option value="2005S050">2005S050</option>
+<option value="2005S049">2005S049</option>
+<option value="2005S048">2005S048</option>
+<option value="2005S047">2005S047</option>
+<option value="2005S046">2005S046</option>
+<option value="2005S045">2005S045</option>
+<option value="2005S044">2005S044</option>
+<option value="2005S043">2005S043</option>
+<option value="2005S042">2005S042</option>
+<option value="2005S041">2005S041</option>
+<option value="2005S040">2005S040</option>
+<option value="2005S039">2005S039</option>
+<option value="2005S038">2005S038</option>
+<option value="2005S037">2005S037</option>
+<option value="2005S036">2005S036</option>
+<option value="2005S035">2005S035</option>
+<option value="2005S034">2005S034</option>
+<option value="2005S033">2005S033</option>
+<option value="2005S032">2005S032</option>
+<option value="2005S031">2005S031</option>
+<option value="2005S030">2005S030</option>
+<option value="2005S029">2005S029</option>
+<option value="2005S028">2005S028</option>
+<option value="2005S027">2005S027</option>
+<option value="2005S026">2005S026</option>
+<option value="2005S025">2005S025</option>
+<option value="2005S024">2005S024</option>
+<option value="2005S023">2005S023</option>
+<option value="2005S022">2005S022</option>
+<option value="2005S021">2005S021</option>
+<option value="2005S020">2005S020</option>
+<option value="2005S019">2005S019</option>
+<option value="2005S018">2005S018</option>
+<option value="2005S017">2005S017</option>
+<option value="2005S016">2005S016</option>
+<option value="2005S015">2005S015</option>
+<option value="2005S014">2005S014</option>
+<option value="2005S013">2005S013</option>
+<option value="2005S012">2005S012</option>
+<option value="2005S011">2005S011</option>
+<option value="2005S010">2005S010</option>
+<option value="2005S009">2005S009</option>
+<option value="2005S008">2005S008</option>
+<option value="2005S007">2005S007</option>
+<option value="2005S006">2005S006</option>
+<option value="2005S005">2005S005</option>
+<option value="2005S004">2005S004</option>
+<option value="2005S003">2005S003</option>
+<option value="2005S002">2005S002</option>
+<option value="2005S001">2005S001</option>
+<option value="2004122">2004122</option>
+<option value="2004121">2004121</option>
+<option value="2004120">2004120</option>
+<option value="2004119">2004119</option>
+<option value="2004118">2004118</option>
+<option value="2004117">2004117</option>
+<option value="2004116">2004116</option>
+<option value="2004115">2004115</option>
+<option value="2004114">2004114</option>
+<option value="2004113">2004113</option>
+<option value="2004112">2004112</option>
+<option value="2004111">2004111</option>
+<option value="2004110">2004110</option>
+<option value="2004109">2004109</option>
+<option value="2004108">2004108</option>
+<option value="2004107">2004107</option>
+<option value="2004106">2004106</option>
+<option value="2004105">2004105</option>
+<option value="2004104">2004104</option>
+<option value="2004103">2004103</option>
+<option value="2004102">2004102</option>
+<option value="2004101">2004101</option>
+<option value="2004100">2004100</option>
+<option value="2004099">2004099</option>
+<option value="2004098">2004098</option>
+<option value="2004097">2004097</option>
+<option value="2004096">2004096</option>
+<option value="2004095">2004095</option>
+<option value="2004094">2004094</option>
+<option value="2004093">2004093</option>
+<option value="2004092">2004092</option>
+<option value="2004091">2004091</option>
+<option value="2004090">2004090</option>
+<option value="2004089">2004089</option>
+<option value="2004088">2004088</option>
+<option value="2004087">2004087</option>
+<option value="2004086">2004086</option>
+<option value="2004085">2004085</option>
+<option value="2004084">2004084</option>
+<option value="2004083">2004083</option>
+<option value="2004082">2004082</option>
+<option value="2004081">2004081</option>
+<option value="2004080">2004080</option>
+<option value="2004079">2004079</option>
+<option value="2004078">2004078</option>
+<option value="2004077">2004077</option>
+<option value="2004076">2004076</option>
+<option value="2004075">2004075</option>
+<option value="2004074">2004074</option>
+<option value="2004073">2004073</option>
+<option value="2004072">2004072</option>
+<option value="2004071">2004071</option>
+<option value="2004070">2004070</option>
+<option value="2004069">2004069</option>
+<option value="2004068">2004068</option>
+<option value="2004067">2004067</option>
+<option value="2004066">2004066</option>
+<option value="2004065">2004065</option>
+<option value="2004064">2004064</option>
+<option value="2004063">2004063</option>
+<option value="2004062">2004062</option>
+<option value="2004061">2004061</option>
+<option value="2004060">2004060</option>
+<option value="2004059">2004059</option>
+<option value="2004058">2004058</option>
+<option value="2004057">2004057</option>
+<option value="2004056">2004056</option>
+<option value="2004055">2004055</option>
+<option value="2004054">2004054</option>
+<option value="2004053">2004053</option>
+<option value="2004052">2004052</option>
+<option value="2004051">2004051</option>
+<option value="2004050">2004050</option>
+<option value="2004049">2004049</option>
+<option value="2004048">2004048</option>
+<option value="2004047">2004047</option>
+<option value="2004046">2004046</option>
+<option value="2004045">2004045</option>
+<option value="2004044">2004044</option>
+<option value="2004043">2004043</option>
+<option value="2004042">2004042</option>
+<option value="2004041">2004041</option>
+<option value="2004040">2004040</option>
+<option value="2004039">2004039</option>
+<option value="2004038">2004038</option>
+<option value="2004037">2004037</option>
+<option value="2004036">2004036</option>
+<option value="2004035">2004035</option>
+<option value="2004034">2004034</option>
+<option value="2004033">2004033</option>
+<option value="2004032">2004032</option>
+<option value="2004031">2004031</option>
+<option value="2004030">2004030</option>
+<option value="2004029">2004029</option>
+<option value="2004028">2004028</option>
+<option value="2004027">2004027</option>
+<option value="2004026">2004026</option>
+<option value="2004025">2004025</option>
+<option value="2004024">2004024</option>
+<option value="2004023">2004023</option>
+<option value="2004022">2004022</option>
+<option value="2004021">2004021</option>
+<option value="2004020">2004020</option>
+<option value="2004019">2004019</option>
+      </select>	  
+      <input value="查询" name="submit" class="NavButton" type="submit">
+    </td>
+	   
+    <td valign="middle" width="52%">IE5: 
+      <input name="button" accesskey="q" onclick="zoomout2(1)" value="缩小" type="button">
+      <input name="button2" accesskey="x" onclick="zoom2()" value="还原" type="button">
+      <input name="button2" accesskey="w" onclick="zoomin2(1)" value="放大" type="button">
+      　IE6: 
+      <input name="button2" accesskey="z" onclick="zoomout(1)" value="缩小" type="button">
+      <input name="button2" onclick="zoom()" value="还原" type="button">
+      <input name="button2" accesskey="c" onclick="zoomin(1)" value="放大" type="button"></td>
+  </tr>
+</tbody></table>
+<table id="test123" style="font-size: 12px;" name="test123" align="center" border="0" cellpadding="0" cellspacing="1" width="776">
+  <tbody><tr nobr="" bgcolor="#cccccc" valign="middle"> 
+    <td colspan="49" align="center" height="25">下表显示第 2004020 期到第 2006S134 
+      期之间 390 期 开奖号码出现频率，点击下面一行数字，标记您的预测号码。</td>
+  </tr>
+  <tr nobr="" bgcolor="#aaaaff" valign="middle"> 
+<td align="center">20</td><td align="center">14</td><td align="center">21</td><td align="center">32</td><td align="center">27</td><td align="center">26</td><td align="center">30</td><td align="center">07</td><td align="center">03</td><td align="center">16</td><td align="center">01</td><td align="center">08</td><td align="center">05</td><td align="center">18</td><td align="center">31</td><td align="center">10</td><td align="center">22</td><td align="center">29</td><td align="center">12</td><td align="center">13</td><td align="center">09</td><td align="center">04</td><td align="center">25</td><td align="center">17</td><td align="center">24</td><td align="center">19</td><td align="center">02</td><td align="center">11</td><td align="center">06</td><td align="center">33</td><td align="center">28</td><td align="center">15</td><td align="center">23</td><td align="center">03.</td><td align="center">09.</td><td align="center">14.</td><td align="center">05.</td><td align="center">07.</td><td align="center">12.</td><td align="center">15.</td><td align="center">13.</td><td align="center">11.</td><td align="center">01.</td><td align="center">06.</td><td align="center">16.</td><td align="center">02.</td><td align="center">10.</td><td align="center">08.</td><td align="center">04.</td>  </tr>
+  <tr nobr="" valign="middle"> 
+<td align="center"><img name="tb21" src="pltss.php_files/zcz.gif" onclick="showball(tb21,'20')"></td>
+<td align="center"><img name="tb15" src="pltss.php_files/zcz.gif" onclick="showball(tb15,'14')"></td>
+<td align="center"><img name="tb22" src="pltss.php_files/zcz.gif" onclick="showball(tb22,'21')"></td>
+<td align="center"><img name="tb33" src="pltss.php_files/zcz.gif" onclick="showball(tb33,'32')"></td>
+<td align="center"><img name="tb28" src="pltss.php_files/zcz.gif" onclick="showball(tb28,'27')"></td>
+<td align="center"><img name="tb27" src="pltss.php_files/zcz.gif" onclick="showball(tb27,'26')"></td>
+<td align="center"><img name="tb31" src="pltss.php_files/zcz.gif" onclick="showball(tb31,'30')"></td>
+<td align="center"><img name="tb8" src="pltss.php_files/zcz.gif" onclick="showball(tb8,'07')"></td>
+<td align="center"><img name="tb4" src="pltss.php_files/zcz.gif" onclick="showball(tb4,'03')"></td>
+<td align="center"><img name="tb17" src="pltss.php_files/zcz.gif" onclick="showball(tb17,'16')"></td>
+<td align="center"><img name="tb2" src="pltss.php_files/zcz.gif" onclick="showball(tb2,'01')"></td>
+<td align="center"><img name="tb9" src="pltss.php_files/zcz.gif" onclick="showball(tb9,'08')"></td>
+<td align="center"><img name="tb6" src="pltss.php_files/zcz.gif" onclick="showball(tb6,'05')"></td>
+<td align="center"><img name="tb19" src="pltss.php_files/zcz.gif" onclick="showball(tb19,'18')"></td>
+<td align="center"><img name="tb32" src="pltss.php_files/zcz.gif" onclick="showball(tb32,'31')"></td>
+<td align="center"><img name="tb11" src="pltss.php_files/zcz.gif" onclick="showball(tb11,'10')"></td>
+<td align="center"><img name="tb23" src="pltss.php_files/zcz.gif" onclick="showball(tb23,'22')"></td>
+<td align="center"><img name="tb30" src="pltss.php_files/zcz.gif" onclick="showball(tb30,'29')"></td>
+<td align="center"><img name="tb13" src="pltss.php_files/zcz.gif" onclick="showball(tb13,'12')"></td>
+<td align="center"><img name="tb14" src="pltss.php_files/zcz.gif" onclick="showball(tb14,'13')"></td>
+<td align="center"><img name="tb10" src="pltss.php_files/zcz.gif" onclick="showball(tb10,'09')"></td>
+<td align="center"><img name="tb5" src="pltss.php_files/zcz.gif" onclick="showball(tb5,'04')"></td>
+<td align="center"><img name="tb26" src="pltss.php_files/zcz.gif" onclick="showball(tb26,'25')"></td>
+<td align="center"><img name="tb18" src="pltss.php_files/zcz.gif" onclick="showball(tb18,'17')"></td>
+<td align="center"><img name="tb25" src="pltss.php_files/zcz.gif" onclick="showball(tb25,'24')"></td>
+<td align="center"><img name="tb20" src="pltss.php_files/zcz.gif" onclick="showball(tb20,'19')"></td>
+<td align="center"><img name="tb3" src="pltss.php_files/zcz.gif" onclick="showball(tb3,'02')"></td>
+<td align="center"><img name="tb12" src="pltss.php_files/zcz.gif" onclick="showball(tb12,'11')"></td>
+<td align="center"><img name="tb7" src="pltss.php_files/zcz.gif" onclick="showball(tb7,'06')"></td>
+<td align="center"><img name="tb34" src="pltss.php_files/zcz.gif" onclick="showball(tb34,'33')"></td>
+<td align="center"><img name="tb29" src="pltss.php_files/zcz.gif" onclick="showball(tb29,'28')"></td>
+<td align="center"><img name="tb16" src="pltss.php_files/zcz.gif" onclick="showball(tb16,'15')"></td>
+<td align="center"><img name="tb24" src="pltss.php_files/zcz.gif" onclick="showball(tb24,'23')"></td>
+<td align="center"><img name="tb104" src="pltss.php_files/zcz.gif" onclick="showball2(tb104,'03.')"></td>
+<td align="center"><img name="tb1010" src="pltss.php_files/zcz.gif" onclick="showball2(tb1010,'09.')"></td>
+<td align="center"><img name="tb1015" src="pltss.php_files/zcz.gif" onclick="showball2(tb1015,'14.')"></td>
+<td align="center"><img name="tb106" src="pltss.php_files/zcz.gif" onclick="showball2(tb106,'05.')"></td>
+<td align="center"><img name="tb108" src="pltss.php_files/zcz.gif" onclick="showball2(tb108,'07.')"></td>
+<td align="center"><img name="tb1013" src="pltss.php_files/zcz.gif" onclick="showball2(tb1013,'12.')"></td>
+<td align="center"><img name="tb1016" src="pltss.php_files/zcz.gif" onclick="showball2(tb1016,'15.')"></td>
+<td align="center"><img name="tb1014" src="pltss.php_files/zcz.gif" onclick="showball2(tb1014,'13.')"></td>
+<td align="center"><img name="tb1012" src="pltss.php_files/zcz.gif" onclick="showball2(tb1012,'11.')"></td>
+<td align="center"><img name="tb102" src="pltss.php_files/zcz.gif" onclick="showball2(tb102,'01.')"></td>
+<td align="center"><img name="tb107" src="pltss.php_files/zcz.gif" onclick="showball2(tb107,'06.')"></td>
+<td align="center"><img name="tb1017" src="pltss.php_files/zcz.gif" onclick="showball2(tb1017,'16.')"></td>
+<td align="center"><img name="tb103" src="pltss.php_files/zcz.gif" onclick="showball2(tb103,'02.')"></td>
+<td align="center"><img name="tb1011" src="pltss.php_files/zcz.gif" onclick="showball2(tb1011,'10.')"></td>
+<td align="center"><img name="tb109" src="pltss.php_files/zcz.gif" onclick="showball2(tb109,'08.')"></td>
+<td align="center"><img name="tb105" src="pltss.php_files/zcz.gif" onclick="showball2(tb105,'04.')"></td>
+  </tr>
+  <tr nobr="" bgcolor="#eeeeee" valign="middle"> 
+<td align="center" valign="bottom">95<br> <img src="pltss.php_files/bluebar.gif" border="0" height="475" width="10"></td><td align="center" valign="bottom">79<br> <img src="pltss.php_files/bluebar.gif" border="0" height="395" width="10"></td><td align="center" valign="bottom">78<br> <img src="pltss.php_files/bluebar.gif" border="0" height="390" width="10"></td><td align="center" valign="bottom">78<br> <img src="pltss.php_files/bluebar.gif" border="0" height="390" width="10"></td><td align="center" valign="bottom">75<br> <img src="pltss.php_files/bluebar.gif" border="0" height="375" width="10"></td><td align="center" valign="bottom">75<br> <img src="pltss.php_files/bluebar.gif" border="0" height="375" width="10"></td><td align="center" valign="bottom">75<br> <img src="pltss.php_files/bluebar.gif" border="0" height="375" width="10"></td><td align="center" valign="bottom">74<br> <img src="pltss.php_files/bluebar.gif" border="0" height="370" width="10"></td><td align="center" valign="bottom">74<br> <img src="pltss.php_files/bluebar.gif" border="0" height="370" width="10"></td><td align="center" valign="bottom">73<br> <img src="pltss.php_files/bluebar.gif" border="0" height="365" width="10"></td><td align="center" valign="bottom">73<br> <img src="pltss.php_files/bluebar.gif" border="0" height="365" width="10"></td><td align="center" valign="bottom">73<br> <img src="pltss.php_files/bluebar.gif" border="0" height="365" width="10"></td><td align="center" valign="bottom">72<br> <img src="pltss.php_files/bluebar.gif" border="0" height="360" width="10"></td><td align="center" valign="bottom">72<br> <img src="pltss.php_files/bluebar.gif" border="0" height="360" width="10"></td><td align="center" valign="bottom">71<br> <img src="pltss.php_files/bluebar.gif" border="0" height="355" width="10"></td><td align="center" valign="bottom">71<br> <img src="pltss.php_files/bluebar.gif" border="0" height="355" width="10"></td><td align="center" valign="bottom">71<br> <img src="pltss.php_files/bluebar.gif" border="0" height="355" width="10"></td><td align="center" valign="bottom">70<br> <img src="pltss.php_files/bluebar.gif" border="0" height="350" width="10"></td><td align="center" valign="bottom">70<br> <img src="pltss.php_files/bluebar.gif" border="0" height="350" width="10"></td><td align="center" valign="bottom">70<br> <img src="pltss.php_files/bluebar.gif" border="0" height="350" width="10"></td><td align="center" valign="bottom">70<br> <img src="pltss.php_files/bluebar.gif" border="0" height="350" width="10"></td><td align="center" valign="bottom">69<br> <img src="pltss.php_files/bluebar.gif" border="0" height="345" width="10"></td><td align="center" valign="bottom">68<br> <img src="pltss.php_files/bluebar.gif" border="0" height="340" width="10"></td><td align="center" valign="bottom">68<br> <img src="pltss.php_files/bluebar.gif" border="0" height="340" width="10"></td><td align="center" valign="bottom">66<br> <img src="pltss.php_files/bluebar.gif" border="0" height="330" width="10"></td><td align="center" valign="bottom">66<br> <img src="pltss.php_files/bluebar.gif" border="0" height="330" width="10"></td><td align="center" valign="bottom">65<br> <img src="pltss.php_files/bluebar.gif" border="0" height="325" width="10"></td><td align="center" valign="bottom">65<br> <img src="pltss.php_files/bluebar.gif" border="0" height="325" width="10"></td><td align="center" valign="bottom">65<br> <img src="pltss.php_files/bluebar.gif" border="0" height="325" width="10"></td><td align="center" valign="bottom">64<br> <img src="pltss.php_files/bluebar.gif" border="0" height="320" width="10"></td><td align="center" valign="bottom">64<br> <img src="pltss.php_files/bluebar.gif" border="0" height="320" width="10"></td><td align="center" valign="bottom">61<br> <img src="pltss.php_files/bluebar.gif" border="0" height="305" width="10"></td><td align="center" valign="bottom">60<br> <img src="pltss.php_files/bluebar.gif" border="0" height="300" width="10"></td><td align="center" valign="bottom">34<br> <img src="pltss.php_files/redbar.gif" border="0" height="170" width="10"></td><td align="center" valign="bottom">30<br> <img src="pltss.php_files/redbar.gif" border="0" height="150" width="10"></td><td align="center" valign="bottom">28<br> <img src="pltss.php_files/redbar.gif" border="0" height="140" width="10"></td><td align="center" valign="bottom">28<br> <img src="pltss.php_files/redbar.gif" border="0" height="140" width="10"></td><td align="center" valign="bottom">27<br> <img src="pltss.php_files/redbar.gif" border="0" height="135" width="10"></td><td align="center" valign="bottom">26<br> <img src="pltss.php_files/redbar.gif" border="0" height="130" width="10"></td><td align="center" valign="bottom">26<br> <img src="pltss.php_files/redbar.gif" border="0" height="130" width="10"></td><td align="center" valign="bottom">26<br> <img src="pltss.php_files/redbar.gif" border="0" height="130" width="10"></td><td align="center" valign="bottom">26<br> <img src="pltss.php_files/redbar.gif" border="0" height="130" width="10"></td><td align="center" valign="bottom">24<br> <img src="pltss.php_files/redbar.gif" border="0" height="120" width="10"></td><td align="center" valign="bottom">22<br> <img src="pltss.php_files/redbar.gif" border="0" height="110" width="10"></td><td align="center" valign="bottom">22<br> <img src="pltss.php_files/redbar.gif" border="0" height="110" width="10"></td><td align="center" valign="bottom">20<br> <img src="pltss.php_files/redbar.gif" border="0" height="100" width="10"></td><td align="center" valign="bottom">18<br> <img src="pltss.php_files/redbar.gif" border="0" height="90" width="10"></td><td align="center" valign="bottom">17<br> <img src="pltss.php_files/redbar.gif" border="0" height="85" width="10"></td><td align="center" valign="bottom">16<br> <img src="pltss.php_files/redbar.gif" border="0" height="80" width="10"></td>  </tr>
+  <tr nobr="" bgcolor="#aaaaff" valign="middle"> 
+<td align="center">20</td><td align="center">14</td><td align="center">21</td><td align="center">32</td><td align="center">27</td><td align="center">26</td><td align="center">30</td><td align="center">07</td><td align="center">03</td><td align="center">16</td><td align="center">01</td><td align="center">08</td><td align="center">05</td><td align="center">18</td><td align="center">31</td><td align="center">10</td><td align="center">22</td><td align="center">29</td><td align="center">12</td><td align="center">13</td><td align="center">09</td><td align="center">04</td><td align="center">25</td><td align="center">17</td><td align="center">24</td><td align="center">19</td><td align="center">02</td><td align="center">11</td><td align="center">06</td><td align="center">33</td><td align="center">28</td><td align="center">15</td><td align="center">23</td><td align="center">03.</td><td align="center">09.</td><td align="center">14.</td><td align="center">05.</td><td align="center">07.</td><td align="center">12.</td><td align="center">15.</td><td align="center">13.</td><td align="center">11.</td><td align="center">01.</td><td align="center">06.</td><td align="center">16.</td><td align="center">02.</td><td align="center">10.</td><td align="center">08.</td><td align="center">04.</td>  </tr>
+</tbody></table>
+  
+<table align="center" bgcolor="#eeeeee" border="0" cellpadding="2" cellspacing="2" width="776">
+  <tbody><tr>
+      
+    <td align="center"><b><font color="#ff6600">山东彩票 版权所有 投注选号 仅供参考 以此操作 风险自担</font></b><font color="#ff6600">&nbsp; 
+      </font> </td>
+    </tr>
+    <tr>
+      
+    <td align="center">&nbsp;</td>
+    </tr>
+  </tbody></table>
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="777">
+  <tbody><tr>
+    <td background="pltss.php_files/hou.gif" height="62"><div align="center"> <span class="zuo"><script src="pltss.php_files/foot.js"></script><a href="http://www.sdcp.com.cn/html/aboutus.html"><font color="#000000">关于我们</font></a> <a href="mailto:admin@sdcp.cn"><font color="#000000">联系我们</font></a> <a href="http://www.sdcp.com.cn/map.htm"><font color="#000000">网站地图</font></a> <a href="http://mail.sdcp.cn/"><font color="#000000">电子邮箱</font></a><br>版权所有 2000-2004 山东彩票（山东省福利彩票<a href="http://oa.sdcp.cn/" target="_blank"><font color="#000000">发行</font></a><a href="http://www.sdcp.cn/" target="_blank"><font color="#000000">中心）</font></a><br><a href="http://www.miibeian.gov.cn/" target="_blank">鲁ICP备05036081号</a></span></div></td>
+  </tr>
+</tbody></table>
+</body></html>

@@ -1,0 +1,51 @@
+table { font-size: 9pt }
+a:visited{color:#000000;text-decoration:none}
+a:link{color:#000000;text-decoration:none}
+a:hover{color:#F16A00;text-decoration:none}
+
+.unnamed1 {
+	font-size: 12px;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.zuo {
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	line-height: normal;
+	letter-spacing: 0.1em;
+}
+.kuang {
+	border-top: 1px none;
+	border-right: 1px solid #CCCCCC;
+	border-bottom: 1px solid #CCCCCC;
+	border-left: 1px solid #CCCCCC;
+}
+.li {
+	font-size: 12px;
+	line-height: 20px;
+	color: #333333;
+	text-decoration: none;
+}
+.zzz {
+	color: #000000;
+	text-decoration: none;
+	font-size: 12px;
+}
+.zu {
+	border-left-style: none;
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #CCCCCC;
+}
+.zy {
+	border-right-width: 1px;
+	border-left-width: 1px;
+	border-right-style: solid;
+	border-left-style: solid;
+	border-right-color: #CCCCCC;
+	border-left-color: #CCCCCC;
+}
